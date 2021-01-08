@@ -118,16 +118,6 @@ func AddDBToCtx(remote bool) (db.DataServerProxy, db.DB, error) {
 	return dataProxy, DB, nil
 }
 
-// var GitTag string
-// var GitHash string
-
-// const versionMessage = `
-//     The official Tellor cli tool %s (%s)
-//     -----------------------------------------
-// 	Website: https://tellor.io
-// 	Github:  https://github.com/tellor-io/telliot
-// `
-
 var cli struct {
 	Config   configPath  `required type:"existingfile" help:"path to config file"`
 	Transfer transferCmd `cmd help:"Transfer tokens"`
@@ -136,7 +126,7 @@ var cli struct {
 	Stake    stakeCmd    `cmd help:"Perform one of the stake operations"`
 	Dispute  struct {
 		New  newDisputeCmd `cmd help:"start a new dispute"`
-		Vote voteCmd       `cmd "vote on a open dispute"`
+		Vote voteCmd       `cmd help:"vote on a open dispute"`
 		Show showCmd       `cmd help:"show open disputes"`
 	} `cmd help:"Perform commands related to disputes"`
 	Dataserver dataserverCmd `cmd help:"launch only a dataserver instance"`
